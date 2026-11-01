@@ -1,0 +1,33 @@
+{
+ "seed": 3,
+ "torch_threads": 6,
+ "frame_hz": 10,
+ "budget_ms": 100.0,
+ "repeats": 3,
+ "pose": {
+  "n": 816,
+  "median_ms": 8.602895992225967,
+  "p95_ms": 9.540624741930515,
+  "max_ms": 12.988833012059331,
+  "share_over_budget": 0.0
+ },
+ "face": {
+  "n": 129,
+  "median_ms": 8.528917009243742,
+  "p95_ms": 8.969891199376434,
+  "max_ms": 9.15512500796467,
+  "share_over_budget": 0.0
+ },
+ "frames": 272,
+ "face_images": 43,
+ "interval_ms": {
+  "median": 99.99999999999432,
+  "min": 99.99999999999432,
+  "max": 100.00000000000142
+ },
+ "dropped_frames": 0,
+ "encoder_step_err_mm_max": 2.8449465006019636e-13,
+ "shared_buffers": 0,
+ "grips": 8,
+ "parts": 8
+}
