@@ -16,4 +16,4 @@ ros2 node list > out/ros_nodes.txt
 ros2 topic list -t > out/ros_topics.txt
 wait $LINE
 grep RESULT out/ros_line.log
-kill $INSP $ECHO
+kill -INT $INSP $ECHO

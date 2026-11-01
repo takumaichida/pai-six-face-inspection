@@ -17,7 +17,7 @@ BELT_Z = 0.06                # belt surface height
 PART_Z = BELT_Z + HALF
 GATE_Y = -0.32               # camera gate on the lane
 PICK_Y = -0.16                # pick point (lane stops here)
-LANE_Y0, LANE_Y1 = -2.90, 1.80
+LANE_Y0, LANE_Y1 = -5.40, 1.80
 V_LANE = 0.03                # belt speed [m/s]
 PITCH = 0.28                 # spacing between parts on the belt
 N_PARTS = 8
@@ -169,6 +169,10 @@ class LaneCell:
             m.geom_sameframe[gid] = 0
         self.mark_y0 = m.geom_pos[self.mark_gid, 1].copy()
         self.hold_eq = [m.equality(f"hold{i}").id for i in range(N_PARTS)]
+        self.finger_body = {m.body("left_finger").id, m.body("right_finger").id}
+        # Stiff grasp assist: the part must turn with the hand even when the wrist turns quickly.
+        m.eq_solref[self.hold_eq] = [4 * m.opt.timestep, 1.0]
+        m.eq_solimp[self.hold_eq] = [0.99, 0.999, 0.001, 0.5, 2]
         self.n_sub = int(round(CTRL_DT / m.opt.timestep))
         self.renderer = mujoco.Renderer(m, img_size, img_size)
         self.video_renderer = mujoco.Renderer(m, video_size[1], video_size[0])
@@ -178,6 +182,8 @@ class LaneCell:
         self.time = 0.0
         self.frame_hook = None
         self.gate_hook = None
+        self.sensor_hook = None   # called every control step (camera stream)
+        self.continuous = False   # True: the lane never stops; parts arrive at uneven spacing and angles
         self.lane_running = True
         self.odo = 0.0
         self.held = None
@@ -224,7 +230,7 @@ class LaneCell:
         return len(self.defect_list[i]) > 0
 
     # -------------------------------------------------------------- reset
-    def reset(self, seed=None, defect_rate=0.3, n_defect=None):
+    def reset(self, seed=None, defect_rate=0.3, n_defect=None, continuous=False):
         if seed is not None:
             self.rng = np.random.default_rng(seed)
         m, d = self.model, self.data
@@ -235,10 +241,20 @@ class LaneCell:
             bad = self.rng.random(N_PARTS) < defect_rate
         else:
             bad = np.zeros(N_PARTS, bool); bad[self.rng.choice(N_PARTS, n_defect, replace=False)] = True
+        self.continuous = continuous
+        y = PICK_Y - 0.45
         for i in range(N_PARTS):
             a = self.part_qadr[i]
-            yaw = self.rng.uniform(-0.2, 0.2)
-            d.qpos[a:a + 3] = [LX + self.rng.uniform(-0.006, 0.006), PICK_Y - 0.45 - i * PITCH, PART_Z + 0.0005]
+            if continuous:   # as parts come from the previous machine: uneven gaps, side offset, any angle
+                yaw = self.rng.uniform(-np.pi / 4, np.pi / 4)
+                x = LX + self.rng.uniform(-0.015, 0.015)
+                if i:
+                    y -= self.rng.uniform(0.56, 0.68)
+            else:
+                yaw = self.rng.uniform(-0.2, 0.2)
+                x = LX + self.rng.uniform(-0.006, 0.006)
+                y = PICK_Y - 0.45 - i * PITCH
+            d.qpos[a:a + 3] = [x, y, PART_Z + 0.0005]
             d.qpos[a + 3:a + 7] = [np.cos(yaw / 2), 0, 0, np.sin(yaw / 2)]
             self.set_defect(i, [self.random_defect(self.rng)] if bad[i] else None)
         d.ctrl[:7] = HOME_Q
@@ -257,11 +273,23 @@ class LaneCell:
     def on_belt(self, i):
         p = self.data.xpos[self.part_body[i]]
         return (abs(p[0] - LX) < 0.06 and LANE_Y0 < p[1] < LANE_Y1 and p[2] < PART_Z + 0.006
-                and i != self.held)
+                and i != self.held and self.part_body[i] not in self._pinched())
+
+    def _pinched(self):
+        """Parts the fingers are touching: the belt slips under them, the hand moves them."""
+        m, d = self.model, self.data
+        out = set()
+        for j in range(d.ncon):
+            b1, b2 = m.geom_bodyid[d.contact[j].geom1], m.geom_bodyid[d.contact[j].geom2]
+            if b1 in self.finger_body:
+                out.add(b2)
+            elif b2 in self.finger_body:
+                out.add(b1)
+        return out
 
     def _convey(self):
         d, m = self.data, self.model
-        if self.lane_running:
+        if self.lane_running and not self.continuous:
             # Stop the line when an unpicked part reaches the pick point.
             for i in range(N_PARTS):
                 if i not in self.picked and self.on_belt(i) and d.qpos[self.part_qadr[i] + 1] >= PICK_Y:
@@ -292,6 +320,8 @@ class LaneCell:
         for _ in range(self.n_sub):
             mujoco.mj_step(self.model, self.data)
         self.time += CTRL_DT
+        if self.sensor_hook is not None:
+            self.sensor_hook(self)
         if self.frame_hook is not None:
             self.frame_hook(self)
 

@@ -63,8 +63,9 @@ class LaneFaceSampler:
         if view.startswith("gate"):
             d.qpos[c.arm_qadr] = self.q_ready + rng.normal(0, 0.02, 7)
             d.qpos[c.finger_qadr:c.finger_qadr + 2] = 0.04
-            d.qpos[a:a + 3] = [LX + rng.uniform(-0.006, 0.006), GATE_Y + rng.uniform(-0.004, 0.004), PART_Z]
-            d.qpos[a + 3:a + 7] = quat_z(rng.uniform(-0.2, 0.2))
+            # Parts pass camera 1 off-centre and at any angle; the most centred frame of the stream is judged.
+            d.qpos[a:a + 3] = [LX + rng.uniform(-0.018, 0.018), GATE_Y + rng.uniform(-0.006, 0.006), PART_Z]
+            d.qpos[a + 3:a + 7] = quat_z(rng.uniform(-np.pi / 4, np.pi / 4))
             # Neighbours one pitch up/down the lane.
             for k, j in enumerate([x for x in range(N_PARTS) if x != i][:2]):
                 aj = c.part_qadr[j]

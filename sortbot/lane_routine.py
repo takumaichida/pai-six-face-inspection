@@ -144,13 +144,39 @@ class LaneProgram:
             r.tick()
         return False
 
+    def grasp_ok(self, i):
+        """The fingers stopped on the part (opening near its width) and the part sits between the pads."""
+        c = self.c
+        tcp, rot = c.tcp_pose()
+        rel = rot.T @ (c.part_pos(i) - tcp)
+        opening = float(c.data.qpos[c.finger_qadr])
+        return abs(rel[0]) < 0.012 and abs(rel[1]) < 0.012 and 0.014 < opening < 0.026
+
     def _grasp_at(self, i, pos, yaw):
+        """Grip the part at pos (xyz, or a callable for a moving part). Returns False if the grip missed."""
         c, r = self.c, self.r
-        r.move([pos[0], pos[1], pos[2] + 0.12], yaw)
-        r.move([pos[0], pos[1], pos[2] + 0.004], yaw, settle=5)
-        r.gripper(CLOSED, steps=6)
+        at = (lambda dz: lambda: np.asarray(pos(), float) + [0, 0, dz]) if callable(pos) else \
+             (lambda dz: np.asarray(pos, float) + [0, 0, dz])
+        r.move(at(0.12), yaw)
+        r.move(at(0.004), yaw, settle=5)
+        r.grip = CLOSED
+        for _ in range(6):                       # keep following the part while the fingers close
+            if callable(pos):
+                r.t_pos = at(0.004)()
+            r.tick()
+        if not self.grasp_ok(i):
+            if getattr(self, "debug", False):
+                tcp, rot = c.tcp_pose()
+                g = np.asarray(pos() if callable(pos) else pos, float)
+                print("grip miss", i, "part-tcp world", np.round((c.part_pos(i) - tcp)[:2] * 1000, 1),
+                      "target-part", np.round((g - c.part_pos(i))[:2] * 1000, 1), "t_pos-tcp", np.round((r.t_pos - tcp)[:2] * 1000, 1))
+            r.gripper(OPEN, steps=4)
+            r.move(at(0.12), yaw, settle=0)
+            return False
         c.attach(i); r.grip = HOLD
-        r.move([pos[0], pos[1], pos[2] + 0.12], yaw, settle=0)
+        lift = r.t_pos + [0, 0, 0.116]
+        r.move(lift, yaw, settle=0)
+        return True
 
     def _release_at(self, xyz):
         r = self.r
@@ -181,10 +207,10 @@ class LaneProgram:
         if SPIN_BACK:
             r.spin(-delta, settle=1)  # back to the earlier wrist angle before carrying the part on
 
-    def _place_back(self, i, x_slot, odo_pick):
+    def _place_back(self, i, x_slot, odo_pick, y_pick=PICK_Y):
         c, r = self.c, self.r
         self.status = f"部品{i + 1}: 良品 → 流れているレーンの元の位置へ戻す"
-        slot = lambda z: lambda: np.array([x_slot, PICK_Y + (c.odo - odo_pick), z])  # noqa: E731
+        slot = lambda z: lambda: np.array([x_slot, y_pick + (c.odo - odo_pick), z])  # noqa: E731
         r.move(slot(Z_ABOVE), settle=0)
         r.move(slot(Z_GRASP + 0.002), settle=3)
         c.detach_all(); r.gripper(OPEN, steps=7)
@@ -212,25 +238,30 @@ class LaneProgram:
             self._grasp_at(i, p, self.pick_yaw)
             odo_pick = c.odo
             c.picked.add(i); c.lane_running = True
-            self.status = f"部品{i + 1}: カメラ2で底面、カメラ3で側面"
-            self._show_two_sides(i, "1")
-            if not self._ng_found(i) and self.mode == "six_face":
-                self.status = f"部品{i + 1}: 持ち替え（90°回して掴み直す）"
-                self._release_at([REGRASP[0], REGRASP[1], REGRASP_TOP + HALF])
-                q = c.part_pos(i)
-                self._grasp_at(i, q, r.best_yaw(q + [0, 0, 0.004], r.t_yaw + np.pi / 2))
-                self.status = f"部品{i + 1}: 指で隠れていた2面をカメラ3で"
-                self._show_two_sides(i, "2")
-            if self._ng_found(i):
-                self.status = f"部品{i + 1}: 不良を検出 → NG箱へ"
-                self._to_ng(i); decision = "NG"
-            else:
-                decision = "OK"
-                self._place_back(i, p[0], odo_pick)
+            decision = self.inspect_held(i, p[0], odo_pick)
         rec = dict(part=i, decision=decision, n_views=len(self.probs[i]),
                    p_max=float(max(self.probs[i] or [0])), t_pick=t0, t_done=c.time)
         self.results.append(rec)
         return rec
+
+    def inspect_held(self, i, x_slot, odo_pick, y_pick=PICK_Y):
+        """With the part in the hand: bottom + side faces, regrasp, the other two sides, then sort it."""
+        c, r = self.c, self.r
+        self.status = f"部品{i + 1}: カメラ2で底面、カメラ3で側面"
+        self._show_two_sides(i, "1")
+        if not self._ng_found(i) and self.mode == "six_face":
+            self.status = f"部品{i + 1}: 持ち替え（90°回して掴み直す）"
+            self._release_at([REGRASP[0], REGRASP[1], REGRASP_TOP + HALF])
+            q = c.part_pos(i)
+            self._grasp_at(i, q, r.best_yaw(q + [0, 0, 0.004], r.t_yaw + np.pi / 2))
+            self.status = f"部品{i + 1}: 指で隠れていた2面をカメラ3で"
+            self._show_two_sides(i, "2")
+        if self._ng_found(i):
+            self.status = f"部品{i + 1}: 不良を検出 → NG箱へ"
+            self._to_ng(i)
+            return "NG"
+        self._place_back(i, x_slot, odo_pick, y_pick)
+        return "OK"
 
     def run(self):
         for i in range(N_PARTS):
