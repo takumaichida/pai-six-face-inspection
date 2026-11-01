@@ -1,0 +1,7132 @@
+{
+ "summary": {
+  "top_only": {
+   "parts": 80,
+   "ng_parts": 30,
+   "hidden_ng_parts": 24,
+   "recall": 0.2,
+   "recall_hidden_faces": 0.0,
+   "false_reject_rate": 0.0,
+   "missed": 24,
+   "chip_parts": 10,
+   "recall_chip": 0.1,
+   "mean_cycle_s": 0.4112499999999913,
+   "mean_cycle_good_s": 0.0,
+   "mean_views": 1.0,
+   "ng_sorted_into_box": 1.0,
+   "parts_per_min": 5.657041838538634
+  },
+  "no_regrasp": {
+   "parts": 80,
+   "ng_parts": 30,
+   "hidden_ng_parts": 24,
+   "recall": 0.7666666666666667,
+   "recall_hidden_faces": 0.7083333333333334,
+   "false_reject_rate": 0.0,
+   "missed": 7,
+   "chip_parts": 10,
+   "recall_chip": 0.8,
+   "mean_cycle_s": 9.081249999999827,
+   "mean_cycle_good_s": 9.399999999999824,
+   "mean_views": 3.5625,
+   "ng_sorted_into_box": 1.0,
+   "parts_per_min": 4.472605292583006
+  },
+  "six_face": {
+   "parts": 80,
+   "ng_parts": 30,
+   "hidden_ng_parts": 24,
+   "recall": 1.0,
+   "recall_hidden_faces": 1.0,
+   "false_reject_rate": 0.0,
+   "missed": 0,
+   "chip_parts": 10,
+   "recall_chip": 1.0,
+   "mean_cycle_s": 15.163749999999533,
+   "mean_cycle_good_s": 17.967999999999446,
+   "mean_views": 4.9125,
+   "ng_sorted_into_box": 1.0,
+   "parts_per_min": 3.1965903036761696
+  },
+  "six_face_all": {
+   "parts": 80,
+   "ng_parts": 30,
+   "hidden_ng_parts": 24,
+   "recall": 1.0,
+   "recall_hidden_faces": 1.0,
+   "false_reject_rate": 0.0,
+   "missed": 0,
+   "chip_parts": 10,
+   "recall_chip": 1.0,
+   "mean_cycle_s": 15.524999999999519,
+   "mean_cycle_good_s": 17.967999999999446,
+   "mean_views": 5.2,
+   "ng_sorted_into_box": 1.0,
+   "parts_per_min": 3.1712473572939595
+  },
+  "six_face_combined": {
+   "parts": 80,
+   "ng_parts": 30,
+   "hidden_ng_parts": 24,
+   "recall": 1.0,
+   "recall_hidden_faces": 1.0,
+   "false_reject_rate": 0.16,
+   "missed": 0,
+   "chip_parts": 10,
+   "recall_chip": 1.0,
+   "mean_cycle_s": 13.973749999999598,
+   "mean_cycle_good_s": 16.345999999999535,
+   "mean_views": 4.4,
+   "ng_sorted_into_box": 1.0,
+   "parts_per_min": 3.357582540570879
+  },
+  "six_face_no_chip": {
+   "parts": 80,
+   "ng_parts": 30,
+   "hidden_ng_parts": 24,
+   "recall": 0.7333333333333333,
+   "recall_hidden_faces": 0.7083333333333334,
+   "false_reject_rate": 0.0,
+   "missed": 8,
+   "chip_parts": 10,
+   "recall_chip": 0.2,
+   "mean_cycle_s": 15.958749999999494,
+   "mean_cycle_good_s": 17.967999999999435,
+   "mean_views": 5.1875,
+   "ng_sorted_into_box": 1.0,
+   "parts_per_min": 3.089797232056737
+  },
+  "six_face_no_chip_combined": {
+   "parts": 80,
+   "ng_parts": 30,
+   "hidden_ng_parts": 24,
+   "recall": 0.9333333333333333,
+   "recall_hidden_faces": 0.9166666666666666,
+   "false_reject_rate": 0.16,
+   "missed": 2,
+   "chip_parts": 10,
+   "recall_chip": 0.8,
+   "mean_cycle_s": 14.097499999999593,
+   "mean_cycle_good_s": 16.347999999999534,
+   "mean_views": 4.4375,
+   "ng_sorted_into_box": 1.0,
+   "parts_per_min": 3.3395950740973563
+  }
+ },
+ "rows": {
+  "top_only": [
+   {
+    "seed": 100,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.499999999999687,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.499999999999687,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 1,
+    "cycle": 0.0,
+    "in_ng_box": false
+   }
+  ],
+  "no_regrasp": [
+   {
+    "seed": 100,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000106,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999828,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000116,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.3999999999996,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000116,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.400000000000148,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999633,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000106,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.400000000000148,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.3999999999996,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000116,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999544,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000116,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.3999999999996,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000116,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.3999999999996,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000116,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.3999999999996,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.499999999999687,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.40000000000013,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.3999999999996,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000116,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.400000000000134,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.400000000000148,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.3999999999996,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 4,
+    "cycle": 9.399999999999466,
+    "in_ng_box": false
+   }
+  ],
+  "six_face": [
+   {
+    "seed": 100,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000106,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.69999999999952,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.400000000000148,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.50000000000025,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998983,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000106,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.39999999999985,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998983,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.19999999999891,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999973,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.50000000000023,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.89999999999975,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.40000000000013,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.900000000000254,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   }
+  ],
+  "six_face_all": [
+   {
+    "seed": 100,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.40000000000013,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.19999999999891,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.19999999999891,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999423,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.400000000000148,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.200000000000188,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998983,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.40000000000013,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.400000000000148,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.39999999999985,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998983,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.400000000000148,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.19999999999891,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.19999999999891,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999973,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.200000000000255,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999999643,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.19999999999891,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.40000000000013,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.900000000000254,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.400000000000148,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   }
+  ],
+  "six_face_combined": [
+   {
+    "seed": 100,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000106,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.69999999999952,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.400000000000148,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.50000000000025,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998983,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000106,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.39999999999985,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998983,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.19999999999891,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999973,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.50000000000023,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.89999999999975,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.40000000000013,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.900000000000254,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999944,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   }
+  ],
+  "six_face_no_chip": [
+   {
+    "seed": 100,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000106,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999999744,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.49999999999902,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999999737,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998997,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000106,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.39999999999985,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998983,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998983,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.19999999999891,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999973,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.50000000000023,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.89999999999975,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.40000000000013,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.900000000000254,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999973,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   }
+  ],
+  "six_face_no_chip_combined": [
+   {
+    "seed": 100,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000106,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 100,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 100,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 101,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.69999999999952,
+    "in_ng_box": true
+   },
+   {
+    "seed": 101,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.400000000000148,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 102,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998983,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 102,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999998988,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000106,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 3,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.39999999999985,
+    "in_ng_box": true
+   },
+   {
+    "seed": 103,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.899999999998983,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 103,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 104,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     5
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 104,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 1,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.500000000000078,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 105,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 105,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 6,
+    "cycle": 19.19999999999891,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999973,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 106,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.399999999999693,
+    "in_ng_box": true
+   },
+   {
+    "seed": 106,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     2
+    ],
+    "defect_types": [
+     "stain"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.50000000000023,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.89999999999975,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 4,
+    "bad": true,
+    "defect_faces": [
+     3
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 5,
+    "cycle": 17.499999999999005,
+    "in_ng_box": true
+   },
+   {
+    "seed": 107,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999899,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 107,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     0
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 1,
+    "cycle": 5.299999999999699,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 0,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.40000000000013,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.700000000000124,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 2,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.900000000000254,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 3,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999944,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.999999999998977,
+    "in_ng_box": false
+   },
+   {
+    "seed": 108,
+    "part": 5,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 6,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 108,
+    "part": 7,
+    "bad": true,
+    "defect_faces": [
+     1
+    ],
+    "defect_types": [
+     "scratch"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 0,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000238,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 1,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 18.000000000000256,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 2,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.99999999999973,
+    "in_ng_box": false
+   },
+   {
+    "seed": 109,
+    "part": 3,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 4,
+    "cycle": 10.399999999999409,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 4,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 5,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.699999999999505,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 6,
+    "bad": true,
+    "defect_faces": [
+     4
+    ],
+    "defect_types": [
+     "chip"
+    ],
+    "decision": "NG",
+    "n_views": 2,
+    "cycle": 8.599999999999511,
+    "in_ng_box": true
+   },
+   {
+    "seed": 109,
+    "part": 7,
+    "bad": false,
+    "defect_faces": [],
+    "defect_types": [],
+    "decision": "OK",
+    "n_views": 6,
+    "cycle": 17.799999999999002,
+    "in_ng_box": false
+   }
+  ]
+ }
+}

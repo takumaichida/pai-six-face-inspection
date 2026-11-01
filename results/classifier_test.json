@@ -1,0 +1,36 @@
+{
+ "acc": 1.0,
+ "defect_recall": 1.0,
+ "defect_precision": 1.0,
+ "confusion": [
+  [
+   1100,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   93,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   78,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   61
+  ]
+ ],
+ "per_view_acc": {
+  "gateTop": 1.0,
+  "stBottom": 1.0,
+  "stSide": 1.0
+ }
+}

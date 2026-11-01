@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+data/
+out/
+third_party/
+_old/
+*.npz
+results_train_log.txt
+concept/*.jsonl
+concept/prompt*.md
+concept/final*.md
+research/*.jsonl
+research/final.md
+research/prompt.md
+models/
+report/report_filled.html

@@ -1,0 +1,8 @@
+mujoco==3.17.0
+torch==2.15.0
+torchvision==0.29.2
+numpy==2.4.6
+imageio==2.38.1
+imageio-ffmpeg==0.7.0
+pillow==13.0.0
+matplotlib==3.11.2

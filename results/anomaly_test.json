@@ -1,0 +1,31 @@
+{
+ "per_view": {
+  "gateTop": {
+   "auroc": 1.0,
+   "threshold": 2.0589606761932373,
+   "detect": 1.0,
+   "false_alarm": 0.01592356687898089
+  },
+  "stBottom": {
+   "auroc": 1.0,
+   "threshold": 2.503014087677002,
+   "detect": 1.0,
+   "false_alarm": 0.008368200836820083
+  },
+  "stSide": {
+   "auroc": 0.9995748480081629,
+   "threshold": 3.018317222595215,
+   "detect": 0.9922480620155039,
+   "false_alarm": 0.010968921389396709
+  }
+ },
+ "per_type": {
+  "scratch": 1.0,
+  "stain": 1.0,
+  "chip": 0.9836065573770492
+ },
+ "fit_images_per_view": 1200,
+ "detect": 0.9956896551724138,
+ "false_alarm": 0.011818181818181818,
+ "auroc": 0.9997962382445141
+}
