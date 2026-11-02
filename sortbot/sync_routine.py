@@ -12,6 +12,8 @@ import time
 
 import numpy as np
 
+from .env import OPEN
+from .imitation import policy_grasp
 from .lane import GATE_Y, LX, PICK_Y, V_LANE
 from .lane_routine import TOP_VIEW, Z_ABOVE, Z_GRASP, LaneProgram
 from .pose import bright_fraction
@@ -23,11 +25,14 @@ TRACK_LEAD = 0.1              # one control step of look-ahead [s]
 
 
 class SyncProgram(LaneProgram):
-    def __init__(self, cell, judge, pose, latency=0.3, compensate=True, **kw):
+    def __init__(self, cell, judge, pose, latency=0.3, compensate=True, grasp_policy=None, grasp_only=False, **kw):
         super().__init__(cell, judge, **kw)
         cell.gate_hook = None
         cell.sensor_hook = self.on_frame
         self.pose, self.latency, self.compensate = pose, latency, compensate
+        self.grasp_policy = grasp_policy      # imitation-learned grasp (sortbot.imitation); None = the program
+        self.grasp_only = grasp_only          # evaluation: set the part aside right after the grip
+        self.policy_active, self.wrist_img = False, None
         self.frames, self.in_view = [], False
         self.tracks = []              # one per part, in arrival order
         self.infer_ms = []
@@ -106,7 +111,13 @@ class SyncProgram(LaneProgram):
         while self.predict_y(tr, c.time + 1.5) < PICK_ZONE:   # let it reach the pick zone
             r.move(lambda: goal() + [0, 0, 0.17], yaw, settle=0, max_steps=1)
         t0 = c.time
-        ok = self._grasp_at(i, goal, yaw)
+        if self.grasp_policy is not None:
+            self.status = f"部品{i + 1}: 模倣学習した方策が、手先カメラを見て追いかけてつかむ"
+            self.policy_active = True
+            ok = policy_grasp(self, i, yaw, self.grasp_policy, on_step=lambda img: setattr(self, "wrist_img", img))
+            self.policy_active = False
+        else:
+            ok = self._grasp_at(i, goal, yaw)
         truth = c.part_pos(i)
         self.picks.append(dict(part=i, ok=bool(ok), err_x=float(tr["x"] - truth[0]),
                                err_y=float(goal()[1] - truth[1]) if not ok else 0.0,
@@ -119,6 +130,16 @@ class SyncProgram(LaneProgram):
             return rec
         y_pick, odo_pick = float(goal()[1]), c.odo
         c.picked.add(i)
+        if self.grasp_only:                   # evaluation of the grip only: take the part off the line
+            c.detach_all()
+            a = c.part_qadr[i]
+            c.data.qpos[a:a + 3] = [2.0 + 0.1 * i, 0.0, 0.03]
+            c.data.qvel[c.part_dadr[i]:c.part_dadr[i] + 6] = 0
+            r.gripper(OPEN, steps=3)
+            rec = dict(part=i, decision="GRIPPED", n_views=len(self.probs[i]), p_max=0.0, t_pick=t0, t_done=c.time,
+                       grip=True)
+            self.results.append(rec)
+            return rec
         if self._ng_found(i):
             self.status = f"部品{i + 1}: 上面で不良を検出 → NG箱へ"
             self._to_ng(i); decision = "NG"

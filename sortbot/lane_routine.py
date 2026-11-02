@@ -27,6 +27,14 @@ def wrap(a):
     return (a + np.pi) % (2 * np.pi) - np.pi
 
 
+def grasp_ok(c, i):
+    """The fingers stopped on the part (opening near its width) and the part sits between the pads."""
+    tcp, rot = c.tcp_pose()
+    rel = rot.T @ (c.part_pos(i) - tcp)
+    opening = float(c.data.qpos[c.finger_qadr])
+    return abs(rel[0]) < 0.012 and abs(rel[1]) < 0.012 and 0.014 < opening < 0.026
+
+
 class LaneRobot:
     def __init__(self, cell):
         self.c = cell
@@ -145,12 +153,7 @@ class LaneProgram:
         return False
 
     def grasp_ok(self, i):
-        """The fingers stopped on the part (opening near its width) and the part sits between the pads."""
-        c = self.c
-        tcp, rot = c.tcp_pose()
-        rel = rot.T @ (c.part_pos(i) - tcp)
-        opening = float(c.data.qpos[c.finger_qadr])
-        return abs(rel[0]) < 0.012 and abs(rel[1]) < 0.012 and 0.014 < opening < 0.026
+        return grasp_ok(self.c, i)
 
     def _grasp_at(self, i, pos, yaw):
         """Grip the part at pos (xyz, or a callable for a moving part). Returns False if the grip missed."""

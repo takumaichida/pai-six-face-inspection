@@ -27,6 +27,7 @@ REGRASP = np.array([0.30, 0.16])
 REGRASP_TOP = 0.06
 NG_TOP = 0.05
 HOME_Q = np.array([0.0, -0.35, 0.0, -2.30, 0.0, 1.95, 0.785])
+WRIST_EYE = np.array([0.052, 0.0, 0.030])   # wrist camera position in the hand frame
 
 
 def _dark(spec_body, **kw):
@@ -56,6 +57,12 @@ def build_lane():
     spec.visual.global_.offheight = 1080
     hand = spec.body("hand")
     hand.add_site(name="tcp", pos=[0, 0, 0.1034], size=[0.005] * 3, rgba=[1, 0, 1, 0])
+    # Wrist camera beside the fingers (offset along the hand x axis, so the fingers never block it), looking
+    # past the fingertips: the input of the imitation-learned grasping policy.
+    _dark(hand, type=mujoco.mjtGeom.mjGEOM_BOX, pos=[WRIST_EYE[0] + 0.008, 0, WRIST_EYE[2] - 0.012],
+          size=[0.012, 0.016, 0.014], rgba=[0.12, 0.12, 0.14, 1])
+    hand.add_camera(name="wrist", pos=WRIST_EYE.tolist(), fovy=70,
+                    quat=lookat_quat(WRIST_EYE, np.array([0.0, 0.0, 0.14]), up=np.array([1.0, 0.0, 0.0])))
     B = mujoco.mjtGeom.mjGEOM_BOX
     C = mujoco.mjtGeom.mjGEOM_CYLINDER
     wb = spec.worldbody

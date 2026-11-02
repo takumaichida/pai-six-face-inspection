@@ -66,4 +66,21 @@ ax.set_xticks(range(4), names); ax.set_yticks(range(4), names)
 ax.set_xlabel("AIの判定"); ax.set_ylabel("正解")
 ax.set_title(f"面画像の判定（テスト{conf.sum()}枚）", fontsize=11)
 fig.tight_layout(); fig.savefig("results/fig_confusion.png"); plt.close(fig)
+
+# 4) Imitation-learned grasp vs the program, both without latency compensation.
+pe = json.load(open("results/policy_eval.json"))["summary"]
+fig, ax = plt.subplots(figsize=(6.8, 4.3), dpi=150)
+prog = [ev[f"B_{lat}_0"]["grip_success"] for lat in lats]
+pol = [pe[f"line_{lat}_0"]["grip_success"] for lat in lats]
+ax.plot(lats, pol, "o-", color="#e08a1e", lw=2, label="模倣学習した方策（手先カメラで追いかける）")
+ax.plot(lats, prog, "s--", color="#d0533f", lw=2, label="プログラム（届いた推定のまま狙う）")
+for xx, a, b in zip(lats, pol, prog):
+    ax.text(xx, a + 0.04, f"{a * 100:.0f}%", ha="center", fontsize=9, color="#b86a0c")
+    ax.text(xx, b - 0.09, f"{b * 100:.0f}%", ha="center", fontsize=9, color="#d0533f")
+ax.set_xlabel("カメラ1の推定がアームに届くまでの遅れ（秒）"); ax.set_ylabel("流れる部品をつかめた割合")
+ax.set_ylim(-0.12, 1.15); ax.set_yticks([0, .25, .5, .75, 1], ["0", "25", "50", "75", "100%"])
+ax.set_xticks(lats); ax.legend(fontsize=8.5, frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.2), ncol=1)
+ax.spines[["top", "right"]].set_visible(False)
+ax.set_title("遅れを補正しない条件での、つかみ成功率", fontsize=11)
+fig.tight_layout(); fig.savefig("results/fig_policy.png"); plt.close(fig)
 print("figures written")

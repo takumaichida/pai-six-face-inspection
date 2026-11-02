@@ -33,6 +33,13 @@ v.update(six_parts=str(s["parts"]), six_ng=str(s["ng_parts"]), a_lots=str(s["par
          tm_budget=f"{tm['budget_ms']:.0f}", tm_dt=f"{tm['interval_ms']['median']:.0f}", tm_drop=str(tm["dropped_frames"]),
          pose_med=f"{tm['pose']['median_ms']:.1f}", pose_p95=f"{tm['pose']['p95_ms']:.1f}",
          face_med=f"{tm['face']['median_ms']:.1f}", face_p95=f"{tm['face']['p95_ms']:.1f}")
+pe = json.load(open("results/policy_eval.json"))["summary"]
+pt = json.load(open("results/policy_train.json"))
+v.update(il_eps=f"{pt['episodes']:,}", il_steps=f"{pt['train_steps'] + pt['val_steps']:,}",
+         ho_eps=str(pe["handover"]["episodes"]), ho_succ=pct(pe["handover"]["success"]),
+         ho_far=pct(pe["handover"]["success_far"]), pol_parts=str(pe[f"line_{lats[0]}_0"]["parts"]),
+         pol_off="".join(f'<td class="num">{pct(pe[f"line_{lat}_0"]["grip_success"])}</td>' for lat in lats),
+         pol_off_max=pct(pe[f"line_{max(lats)}_0"]["grip_success"]))
 html = open("report/report.html", encoding="utf-8").read()
 for k, val in v.items():
     html = html.replace("{{" + k + "}}", val)

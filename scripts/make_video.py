@@ -44,7 +44,7 @@ def card_title():
     d.text((70, 210), "ロボットによる6面外観検査ライン", font=F(54), fill=(255, 255, 255))
     d.text((70, 290), "止まらないレーンで、カメラとアームを同期させる", font=F(38), fill=(255, 220, 120))
     d.text((70, 370), "アルミ切削ハウジング（40 mm角）の出荷前全数検査", font=F(28), fill=(220, 225, 235))
-    d.text((70, 410), "MuJoCo シミュレーション ＋ ROS 2 ＋ 画像認識AI（ResNet-18）", font=F(28), fill=(220, 225, 235))
+    d.text((70, 410), "MuJoCo シミュレーション ＋ ROS 2 ＋ 画像認識AI ＋ 模倣学習", font=F(28), fill=(220, 225, 235))
     d.text((70, 620), "Physical AI 応用編1 最終課題", font=F(22), fill=(180, 185, 195))
     return bg
 
@@ -66,7 +66,8 @@ def card_problem():
         ("③ つかむと指の2面が隠れる", (230, 120, 110)),
         "→ 手首180°回転＋持ち替えで6面すべて撮る",
         "",
-        "良品は流れているレーンの元の位置へ戻す",
+        ("④ つかむ動作を学習させる", (230, 120, 110)),
+        "→ お手本から模倣学習。手先カメラを見てつかむ",
     ], size=24, gap=9)
     d.text((650, 470), "撮影の流れ（生成AIで作成したイメージ）", font=F(16), fill=(160, 165, 175))
     return bg
@@ -92,10 +93,31 @@ def card_sync():
     return bg
 
 
+def card_policy():
+    pe = json.load(open("results/policy_eval.json"))["summary"]
+    bg = Image.new("RGB", (W, H), (255, 255, 255))
+    d = ImageDraw.Draw(bg)
+    d.text((50, 30), "結果②：模倣学習した方策は、遅れを補正しなくてもつかめる", font=F(34), fill=(20, 24, 30))
+    im = fit("results/fig_policy.png", 800, 450)
+    bg.paste(im, (30, 105))
+    mx = max(LATS)
+    lines(d, 860, 150, [
+        "お手本：つかむプログラムを自動で",
+        "千回以上実行して記録",
+        "",
+        ("模倣学習した方策", (200, 120, 20)), f"遅れ {mx:.1f} 秒で {pe[f'line_{mx}_0']['grip_success'] * 100:.0f}%",
+        "",
+        ("プログラム", (200, 70, 60)), f"遅れ {mx:.1f} 秒で {PCT(f'B_{mx}_0', 'grip_success')}",
+    ], size=24, gap=10, fill=(30, 34, 40))
+    d.text((50, 600), "方策の入力は手先カメラの画像と手の状態。次の1秒分の動きをまとめて出す（ACTと同じ方式）", font=F(22), fill=(80, 85, 95))
+    d.text((50, 640), "部品を見ながら位置を直すので、届いた推定が古くても追いつける", font=F(26), fill=(200, 120, 20))
+    return bg
+
+
 def card_result():
     bg = Image.new("RGB", (W, H), (255, 255, 255))
     d = ImageDraw.Draw(bg)
-    d.text((50, 30), "結果②：持ち替えまで行うと、見逃しは0個", font=F(36), fill=(20, 24, 30))
+    d.text((50, 30), "結果③：持ち替えまで行うと、見逃しは0個", font=F(36), fill=(20, 24, 30))
     im = fit("results/fig_detection.png", 820, 460)
     bg.paste(im, (30, 110))
     s = EV["A_six_face"]
@@ -118,6 +140,7 @@ def card_end():
         ("まとめ", (255, 220, 120)),
         "止まらないレーンで、AIの位置推定と回転計を同期させて追いかけてつかむ",
         "遅れを撮影時刻で補正し、持ち替えで6面すべてをAIで判定",
+        "つかむ動作は、お手本から模倣学習した方策が手先カメラを見て行う",
         "良品は流れているレーンの元の位置へ戻し、不良品だけをNG箱へ",
         "撮影するラインと判定AIは ROS 2 で別ノードに分離",
         "",
@@ -140,7 +163,7 @@ def main(demo, out):
     w.close()
     tmp2 = out + ".end.mp4"
     w = imageio.get_writer(tmp2, fps=FPS, quality=8, macro_block_size=1)
-    still(card_sync(), 9, w); still(card_result(), 9, w); still(card_end(), 6, w)
+    still(card_sync(), 8, w); still(card_policy(), 9, w); still(card_result(), 8, w); still(card_end(), 6, w)
     w.close()
     lst = out + ".txt"
     open(lst, "w").write("".join(f"file '{os.path.abspath(p)}'\n" for p in [tmp, demo, tmp2]))

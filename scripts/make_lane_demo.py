@@ -16,6 +16,7 @@ from sortbot.cell import FACE_NAMES, HALF  # noqa: E402
 from sortbot.judge import FaceJudge  # noqa: E402
 from sortbot.lane import LX, N_PARTS, V_LANE, LaneCell  # noqa: E402
 from sortbot.pose import PoseEstimator  # noqa: E402
+from sortbot.imitation import GraspPolicy  # noqa: E402
 from sortbot.sync_routine import SyncProgram  # noqa: E402
 
 W, H = 1280, 720
@@ -97,6 +98,12 @@ class Recorder:
         canvas.paste(Image.fromarray(c.render_video("video_station")).resize((256, 144)), (8, 64))
         d.rectangle([8, 64, 264, 208], outline=(90, 95, 105), width=2)
         d.text((14, 188), "検査台のアップ", font=self.f_small, fill=(240, 240, 240))
+        if self.prog.policy_active and self.prog.wrist_img is not None:
+            canvas.paste(Image.fromarray(self.prog.wrist_img).resize((144, 144)), (276, 64))
+            d.rectangle([276, 64, 420, 208], outline=(255, 150, 40), width=3)
+            d.rectangle([276, 210, 560, 252], fill=(18, 20, 24))
+            d.text((282, 212), "手先カメラ（方策への入力）", font=self.f_small, fill=(255, 190, 110))
+            d.text((282, 231), "模倣学習した方策が操作中", font=self.f_small, fill=(255, 190, 110))
         d.rectangle([0, 596, 960, 720], fill=(28, 31, 38))
         d.text((18, 606), self.prog.status or "", font=self.f_big, fill=(255, 220, 120))
         d.text((18, 650), f"検査済み {self.n_done}/{N_PARTS}　NG箱へ {self.n_ng}　良品をレーンへ戻す {self.n_back}",
@@ -136,7 +143,7 @@ class Recorder:
         self.frame += 1
 
 
-def main(seed=21, path="out/lane_demo.mp4"):
+def main(seed=23, path="out/lane_demo.mp4"):
     c = LaneCell(video_size=(960, 540))
     c.reset(seed=seed, n_defect=0, continuous=True)
     # Showcase: a stain on the top face (camera 1), a scratch on the bottom (camera 2),
@@ -147,7 +154,7 @@ def main(seed=21, path="out/lane_demo.mp4"):
         sp = c.random_defect(rng, t=t, face=face); sp["scale"] = 0.8
         c.set_defect(i, [sp])
     judge = FaceJudge()
-    prog = SyncProgram(c, judge, PoseEstimator(), latency=LATENCY, compensate=True)
+    prog = SyncProgram(c, judge, PoseEstimator(), latency=LATENCY, compensate=True, grasp_policy=GraspPolicy())
     rec = Recorder(c, prog, judge, path)
     prog.capture_listeners.append(rec.on_capture)
     orig_capture = prog.capture
@@ -182,4 +189,4 @@ def main(seed=21, path="out/lane_demo.mp4"):
 
 
 if __name__ == '__main__':
-    main(int(sys.argv[1]) if len(sys.argv) > 1 else 21)
+    main(int(sys.argv[1]) if len(sys.argv) > 1 else 23)
