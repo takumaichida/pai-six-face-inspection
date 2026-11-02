@@ -2,7 +2,8 @@
 
 Each episode puts a part just before the pick zone (random side offset, angle, defects, belt stripe phase) and
 the hand above it with a random offset (up to 6 cm behind, as when the camera estimate arrives late without
-compensation). The teacher (the program's grasp with the true part position) then grips the part. Small noise
+compensation). Half of the episodes use the other of the two hand yaws that grip the same faces (180 deg apart),
+since on the line the arm reaches the part with either. The teacher (the program's grasp with the true part position) then grips the part. Small noise
 is added to the executed motion (DART), while the recorded label is always the teacher's clean action, so the
 student also learns to correct its own drift.
 
@@ -43,6 +44,11 @@ def worker(args):
         off = np.array([np.clip(rng.normal(0, 0.01), -0.025, 0.025), rng.uniform(-0.06, 0.02), rng.uniform(-0.02, 0.03)])
         goal = teacher_goal(c, 0)
         hover = lambda: goal() + [0, 0, 0.17] + off  # noqa: E731
+        if rng.random() < 0.5:          # the other yaw that grips the same faces: on the line the arm uses both
+            alt = yaw - np.pi if yaw > 0 else yaw + np.pi
+            q7 = c.ik(hover(), grasp_rot(alt), HOME_Q, iters=300)[6]
+            if c.jlo[6] + 0.2 < q7 < c.jhi[6] - 0.2:
+                yaw = alt
         q = c.ik(hover(), grasp_rot(yaw), HOME_Q, iters=300)
         d.qpos[c.arm_qadr] = q; d.ctrl[:7] = q; d.qvel[:] = 0
         mujoco.mj_forward(c.model, d)

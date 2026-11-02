@@ -1,7 +1,9 @@
 """Train the imitation-learned grasp policy (ACT-style action chunks) on the teacher demonstrations.
 
 Targets for each step are the teacher's next CHUNK actions; steps past the end of an episode are masked out, as
-in ACT. Loss: L1 on the hand motion, binary cross-entropy on closing the fingers. Episodes are split 90/10.
+in ACT. The hand-motion target is the teacher's motion minus the belt's own motion (sortbot.imitation.belt_step;
+the demonstrations are all on the running belt). Loss: L1 on the hand motion, binary cross-entropy on closing the
+fingers. Episodes are split 90/10.
 
 usage: train_policy.py <epochs> -> models/grasp_policy.pt, results/policy_train.json
 """
@@ -15,7 +17,9 @@ import torch
 import torch.nn.functional as F
 
 sys.path.insert(0, '.')
+from sortbot.env import CTRL_DT  # noqa: E402
 from sortbot.imitation import ACT_SCALE, CHUNK, ChunkPolicy, to_tensor  # noqa: E402
+from sortbot.lane import V_LANE  # noqa: E402
 
 
 def load():
@@ -25,6 +29,9 @@ def load():
     keep = np.isin(cat["ep"], list(good))
     cat = {k: v[keep] for k, v in cat.items()}
     n = len(cat["ep"])
+    yaw = np.arctan2(cat["state"][:, 3], cat["state"][:, 2])            # hand yaw of each step
+    belt = V_LANE * CTRL_DT
+    cat["act"] = cat["act"] - np.stack([np.sin(yaw) * belt, np.cos(yaw) * belt, np.zeros(n)], 1).astype(np.float32)
     tgt = np.zeros((n, CHUNK, 4), np.float32); mask = np.zeros((n, CHUNK), np.float32)
     start = np.r_[0, np.flatnonzero(np.diff(cat["ep"])) + 1, n]
     for a, b in zip(start[:-1], start[1:]):
@@ -71,7 +78,7 @@ def main(epochs):
         l_mov = ((out[..., :3] - y[..., :3]).abs().mean(-1) * m).sum() / m.sum()
         l_cls = (F.binary_cross_entropy_with_logits(out[..., 3], y[..., 3], reduction="none") * m).sum() / m.sum()
         acc = (((out[..., 3] > 0).float() == y[..., 3]).float() * m).sum() / m.sum()
-        return l_mov + l_cls, l_mov, l_cls, acc
+        return l_mov + l_cls, l_mov, l_cls, acc, m.sum()
 
     log = []
     t0 = time.time()
@@ -79,12 +86,12 @@ def main(epochs):
         net.train()
         perm = np.random.permutation(tr)
         for b in range(len(tr) // 128):
-            loss, *_ = batch_loss(perm[b * 128:(b + 1) * 128], True)
+            loss = batch_loss(perm[b * 128:(b + 1) * 128], True)[0]
             opt.zero_grad(); loss.backward(); opt.step(); sched.step()
         net.eval()
         with torch.no_grad():
-            r = [torch.stack(batch_loss(va[k:k + 256], False)).cpu().numpy() for k in range(0, len(va), 256)]
-        r = np.mean(r, 0)
+            r = np.array([torch.stack(batch_loss(va[k:k + 256], False)).cpu().numpy() for k in range(0, len(va), 256)])
+        r = (r[:, :4] * r[:, 4:5]).sum(0) / r[:, 4].sum()       # weighted by the number of unmasked actions
         log.append(dict(epoch=ep + 1, val_loss=float(r[0]), val_move_l1_mm=float(r[1] * ACT_SCALE * 1000),
                         val_close_bce=float(r[2]), val_close_acc=float(r[3]), sec=round(time.time() - t0)))
         print(log[-1], flush=True)

@@ -28,6 +28,8 @@ REGRASP_TOP = 0.06
 NG_TOP = 0.05
 HOME_Q = np.array([0.0, -0.35, 0.0, -2.30, 0.0, 1.95, 0.785])
 WRIST_EYE = np.array([0.052, 0.0, 0.030])   # wrist camera position in the hand frame
+FINGER_FRICTION = [2.5, 0.02, 0.0005]        # rubber pads on the fingertips (sliding, torsional [m], rolling [m])
+GRASP_ASSIST = False                          # True: fix the gripped part to the hand (weld); False: friction only
 
 
 def _dark(spec_body, **kw):
@@ -42,7 +44,7 @@ def build_lane():
     # OpenGL renders at most 8 lights (the headlight included): drop the model's own light, use ours.
     for light in list(spec.lights):
         spec.delete(light)
-    spec.option.timestep = 0.002
+    spec.option.timestep = 0.0005            # 2 ms let a pinched part creep out of the fingers; 0.5 ms holds it
     spec.option.cone = mujoco.mjtCone.mjCONE_ELLIPTIC
     spec.option.impratio = 10
     spec.option.noslip_iterations = 3
@@ -57,6 +59,11 @@ def build_lane():
     spec.visual.global_.offheight = 1080
     hand = spec.body("hand")
     hand.add_site(name="tcp", pos=[0, 0, 0.1034], size=[0.005] * 3, rgba=[1, 0, 1, 0])
+    for name in ("left_finger", "right_finger"):
+        for g in spec.body(name).geoms:
+            g.friction = FINGER_FRICTION
+            g.solref = [0.004, 1.0]                  # stiff pad contact: less creep of the held part
+            g.solimp = [0.99, 0.999, 0.001, 0.5, 2]
     # Wrist camera beside the fingers (offset along the hand x axis, so the fingers never block it), looking
     # past the fingertips: the input of the imitation-learned grasping policy.
     _dark(hand, type=mujoco.mjtGeom.mjGEOM_BOX, pos=[WRIST_EYE[0] + 0.008, 0, WRIST_EYE[2] - 0.012],
@@ -268,7 +275,7 @@ class LaneCell:
         d.ctrl[7] = OPEN
         d.eq_active[self.hold_eq] = 0
         mujoco.mj_forward(m, d)
-        for _ in range(100):
+        for _ in range(int(round(0.2 / m.opt.timestep))):   # let the parts settle for 0.2 s
             mujoco.mj_step(m, d)
         self.time, self.odo = 0.0, 0.0
         self.lane_running, self.held = True, None
@@ -334,6 +341,9 @@ class LaneCell:
 
     # ------------------------------------------------------- grasp assist
     def attach(self, i):
+        if not GRASP_ASSIST:                 # the rubber-padded fingers alone hold the part
+            self.held = i
+            return
         m, d = self.model, self.data
         hp, hq = d.xpos[self.hand_body], d.xquat[self.hand_body]
         pp, pq = d.xpos[self.part_body[i]], d.xquat[self.part_body[i]]
@@ -375,6 +385,20 @@ class LaneCell:
         r = self.part_mat(i)
         normals = (r @ FACE_NORMALS.T).T
         return int(np.argmax(normals @ (direction / np.linalg.norm(direction))))
+
+    def in_hand(self, i):
+        """The part touches both fingers and sits between the pads (check for the friction-only hold)."""
+        m, d = self.model, self.data
+        pb, touch = self.part_body[i], set()
+        for j in range(d.ncon):
+            b1, b2 = m.geom_bodyid[d.contact[j].geom1], m.geom_bodyid[d.contact[j].geom2]
+            if b1 == pb and b2 in self.finger_body:
+                touch.add(b2)
+            elif b2 == pb and b1 in self.finger_body:
+                touch.add(b1)
+        tcp, rot = self.tcp_pose()
+        rel = rot.T @ (self.part_pos(i) - tcp)
+        return len(touch) == 2 and float(np.abs(rel).max()) < 0.02
 
     def in_ng_box(self, i):
         p = self.part_pos(i)

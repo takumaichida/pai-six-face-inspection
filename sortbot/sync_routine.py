@@ -55,7 +55,8 @@ class SyncProgram(LaneProgram):
 
     def finish_track(self, cell):
         fr = [f for f in self.frames if f[5] > FULL]
-        if len(fr) < 3:
+        if len(fr) < 3:                                         # keep the slot so later parts keep their numbers
+            self.tracks.append(dict(part=len(self.tracks), valid=False, t_avail=cell.time))
             return
         t = np.array([f[0] for f in fr]); y = GATE_Y + np.array([f[2] for f in fr])
         odo = np.array([f[6] for f in fr])
@@ -94,7 +95,7 @@ class SyncProgram(LaneProgram):
         self.status = f"部品{i + 1}: カメラ1が撮り続け、位置と向きをAIで推定"
         r.move([LX - 0.05, PICK_ZONE + 0.10, Z_ABOVE + 0.05], settle=0)
         tr = self.wait_track(i)
-        if tr is None:
+        if tr is None or not tr.get("valid", True):
             rec = dict(part=i, decision="MISSED", n_views=0, p_max=0.0, t_pick=c.time, t_done=c.time, grip=False)
             self.results.append(rec)
             return rec
@@ -113,6 +114,7 @@ class SyncProgram(LaneProgram):
         t0 = c.time
         if self.grasp_policy is not None:
             self.status = f"部品{i + 1}: 模倣学習した方策が、手先カメラを見て追いかけてつかむ"
+            r.move(lambda: goal() + [0, 0, 0.17], yaw, settle=0)   # hand over above the part, as in the demonstrations
             self.policy_active = True
             ok = policy_grasp(self, i, yaw, self.grasp_policy, on_step=lambda img: setattr(self, "wrist_img", img))
             self.policy_active = False
@@ -128,7 +130,7 @@ class SyncProgram(LaneProgram):
                        t_pick=t0, t_done=c.time, grip=False)
             self.results.append(rec)
             return rec
-        y_pick, odo_pick = float(goal()[1]), c.odo
+        y_pick, odo_pick = float(self.grip_at[0][1]), self.grip_at[1]   # the slot where the part was gripped
         c.picked.add(i)
         if self.grasp_only:                   # evaluation of the grip only: take the part off the line
             c.detach_all()
@@ -140,7 +142,9 @@ class SyncProgram(LaneProgram):
                        grip=True)
             self.results.append(rec)
             return rec
-        if self._ng_found(i):
+        if self._dropped(i):
+            decision = "DROPPED"
+        elif self._ng_found(i):
             self.status = f"部品{i + 1}: 上面で不良を検出 → NG箱へ"
             self._to_ng(i); decision = "NG"
         else:

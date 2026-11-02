@@ -10,7 +10,9 @@ true part position from the simulator: a privileged teacher. The student policy 
 the hand state, so at run time it needs neither the true position nor the encoder.
 
 Actions are in the hand frame (rotated by the hand yaw): the hand target for the next step relative to the
-current tool point, and the probability of closing the fingers.
+current tool point, and the probability of closing the fingers. The belt's own motion over one step (known from
+the encoder rate) is added outside the network, so the policy learns only the correction on top of it; otherwise
+it has to learn how the belt direction turns with the hand yaw, and it lagged behind parts gripped at large yaws.
 """
 import mujoco
 import numpy as np
@@ -44,6 +46,11 @@ def hand_state(c, r):
     tcp, _ = c.tcp_pose()
     return np.array([(tcp[2] - PART_Z) / 0.1, c.data.qpos[c.finger_qadr] / 0.04,
                      np.cos(r.t_yaw), np.sin(r.t_yaw)], np.float32)
+
+
+def belt_step(c):
+    """Belt motion over one control step (world frame), from the encoder rate."""
+    return np.array([0.0, V_LANE * CTRL_DT if c.lane_running else 0.0, 0.0])
 
 
 def to_hand(yaw, v):
@@ -151,7 +158,7 @@ def policy_grasp(prog, i, yaw, policy, on_step=None):
             on_step(img)
         a, logit = policy(img, hand_state(c, r))
         tcp, _ = c.tcp_pose()
-        r.t_pos = tcp + from_hand(r.t_yaw, a)
+        r.t_pos = tcp + from_hand(r.t_yaw, a) + belt_step(c)
         if logit > 0 or closed:                       # once the policy closes the fingers they stay closed
             r.grip = CLOSED; closed += 1
         else:
@@ -159,13 +166,18 @@ def policy_grasp(prog, i, yaw, policy, on_step=None):
         r.tick()
         if closed >= CLOSE_STEPS:
             break
-    if not closed or not grasp_ok(c, i):
+    if closed < CLOSE_STEPS or not grasp_ok(c, i):
         r.gripper(OPEN, steps=4)
         r.move(r.t_pos + [0, 0, 0.10], settle=0)
         return False
+    from . import lane as lane_cfg
     from .lane_routine import HOLD
+    prog.grip_at = (c.tcp_pose()[0], c.odo)
     c.attach(i); r.grip = HOLD
     r.move(r.t_pos + [0, 0, 0.116], yaw, settle=0)
+    if not lane_cfg.GRASP_ASSIST and not c.in_hand(i):   # slipped out while lifting
+        c.detach_all(); r.gripper(OPEN, steps=4)
+        return False
     return True
 
 
@@ -173,5 +185,5 @@ def teacher_goal(c, i):
     return lambda: c.part_pos(i) + [0, V_LANE * LEAD, 0] - [0, 0, c.part_pos(i)[2] - PART_Z]
 
 
-__all__ = ["CHUNK", "WRIST_PX", "ACT_SCALE", "Teacher", "ChunkPolicy", "GraspPolicy", "policy_grasp",
+__all__ = ["CHUNK", "WRIST_PX", "ACT_SCALE", "Teacher", "ChunkPolicy", "GraspPolicy", "policy_grasp", "belt_step",
            "wrist_image", "hand_state", "to_hand", "from_hand", "to_tensor", "teacher_goal", "OPEN"]

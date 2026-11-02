@@ -21,7 +21,8 @@ for tag, key in [("top", "A_top_only"), ("nr", "A_no_regrasp"), ("six", "A_six_f
     v[f"{tag}_grip"] = f"{pct(s['grip_success'])}（{round(s['grip_success'] * s['grips_tried'])}/{s['grips_tried']}）"
     v[f"{tag}_cyc"] = f"{s['mean_cycle_s']:.1f}"
 s = ev["A_six_face"]
-v.update(six_parts=str(s["parts"]), six_ng=str(s["ng_parts"]), a_lots=str(s["parts"] // 8),
+v.update(drop_all=str(sum(ev[k].get("dropped", 0) for k in ("A_top_only", "A_no_regrasp", "A_six_face"))),
+         six_parts=str(s["parts"]), six_ng=str(s["ng_parts"]), a_lots=str(s["parts"] // 8),
          pose_x=f"{po['err_x_mm']:.1f}", pose_y=f"{po['err_y_mm']:.1f}", pose_yaw=f"{po['err_yaw_deg']:.1f}",
          infer_ms=f"{s['infer_ms']:.0f}", cl_n=str(sum(map(sum, cl["confusion"]))), cl_acc=f"{cl['acc'] * 100:.1f}%",
          lat_max=f"{max(lats):.1f}", grip_on_max=pct(ev[f"B_{max(lats)}_1"]["grip_success"]),
@@ -43,6 +44,8 @@ v.update(il_eps=f"{pt['episodes']:,}", il_steps=f"{pt['train_steps'] + pt['val_s
          prog_off="".join(f'<td class="num">{pct(pe.get(f"prog_{lat}_0", ev[f"B_{lat}_0"])["grip_success"])}</td>' for lat in lats),
          prog_off_max=pct(pe.get(f"prog_{max(lats)}_0", ev[f"B_{max(lats)}_0"])["grip_success"]),
          prog_parts=str(pe.get(f"prog_{lats[0]}_0", ev[f"B_{lats[0]}_0"]).get("parts", 24)))
+pl = json.load(open("results/policy_line.json"))["summary"]
+v.update({f"pl_{k}": str(val) for k, val in pl.items()})
 html = open("report/report.html", encoding="utf-8").read()
 for k, val in v.items():
     html = html.replace("{{" + k + "}}", val)

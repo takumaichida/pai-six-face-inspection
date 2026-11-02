@@ -7,6 +7,7 @@ that were under the fingers, and finally puts good parts back into their own slo
 """
 import numpy as np
 
+from . import lane as lane_cfg
 from .env import CLOSED, CTRL_DT, OPEN, grasp_rot
 from .lane import HALF, LX, NG_BOX, NG_TOP, N_PARTS, PART_Z, PICK_Y, REGRASP, REGRASP_TOP, STATION
 
@@ -32,7 +33,7 @@ def grasp_ok(c, i):
     tcp, rot = c.tcp_pose()
     rel = rot.T @ (c.part_pos(i) - tcp)
     opening = float(c.data.qpos[c.finger_qadr])
-    return abs(rel[0]) < 0.012 and abs(rel[1]) < 0.012 and 0.014 < opening < 0.026
+    return abs(rel[0]) < 0.012 and abs(rel[1]) < 0.012 and abs(rel[2]) < 0.012 and 0.014 < opening < 0.026
 
 
 class LaneRobot:
@@ -176,9 +177,21 @@ class LaneProgram:
             r.gripper(OPEN, steps=4)
             r.move(at(0.12), yaw, settle=0)
             return False
+        self.grip_at = (c.tcp_pose()[0], c.odo)   # where on the belt the part was gripped
         c.attach(i); r.grip = HOLD
         lift = r.t_pos + [0, 0, 0.116]
         r.move(lift, yaw, settle=0)
+        if not lane_cfg.GRASP_ASSIST and not c.in_hand(i):   # slipped out while lifting
+            c.detach_all(); r.gripper(OPEN, steps=4)
+            return False
+        return True
+
+    def _dropped(self, i):
+        """Friction-only hold: True (and the hand lets go) if the part has left the fingers."""
+        if lane_cfg.GRASP_ASSIST or self.c.in_hand(i):
+            return False
+        self.status = f"部品{i + 1}: 手から落ちた"
+        self.c.detach_all(); self.r.gripper(OPEN, steps=3)
         return True
 
     def _release_at(self, xyz):
@@ -215,7 +228,9 @@ class LaneProgram:
         self.status = f"部品{i + 1}: 良品 → 流れているレーンの元の位置へ戻す"
         slot = lambda z: lambda: np.array([x_slot, y_pick + (c.odo - odo_pick), z])  # noqa: E731
         r.move(slot(Z_ABOVE), settle=0)
-        r.move(slot(Z_GRASP + 0.002), settle=3)
+        off = c.part_pos(i)[:2] - c.tcp_pose()[0][:2]   # where the part sits in the hand (a friction hold can creep)
+        put = lambda z: lambda: slot(z)() - np.r_[off, 0.0]  # noqa: E731
+        r.move(put(Z_GRASP + 0.002), settle=3)
         c.detach_all(); r.gripper(OPEN, steps=7)
         r.move(slot(Z_ABOVE), settle=0)
 
@@ -252,13 +267,20 @@ class LaneProgram:
         c, r = self.c, self.r
         self.status = f"部品{i + 1}: カメラ2で底面、カメラ3で側面"
         self._show_two_sides(i, "1")
+        if self._dropped(i):
+            return "DROPPED"
         if not self._ng_found(i) and self.mode == "six_face":
             self.status = f"部品{i + 1}: 持ち替え（90°回して掴み直す）"
             self._release_at([REGRASP[0], REGRASP[1], REGRASP_TOP + HALF])
             q = c.part_pos(i)
-            self._grasp_at(i, q, r.best_yaw(q + [0, 0, 0.004], r.t_yaw + np.pi / 2))
+            yaw2 = r.best_yaw(q + [0, 0, 0.004], r.t_yaw + np.pi / 2)
+            if not self._grasp_at(i, q, yaw2) and not self._grasp_at(i, c.part_pos(i), yaw2):   # one retry
+                self.status = f"部品{i + 1}: 持ち替えでつかめなかった"
+                return "DROPPED"
             self.status = f"部品{i + 1}: 指で隠れていた2面をカメラ3で"
             self._show_two_sides(i, "2")
+            if self._dropped(i):
+                return "DROPPED"
         if self._ng_found(i):
             self.status = f"部品{i + 1}: 不良を検出 → NG箱へ"
             self._to_ng(i)

@@ -1,0 +1,350 @@
+{
+ "summary": {
+  "lots": 6,
+  "parts": 48,
+  "grips": 48,
+  "dropped": 0,
+  "ng_parts": 18,
+  "ng_caught": 18,
+  "good_parts": 30,
+  "good_ok": 30
+ },
+ "rows": [
+  {
+   "seed": 400,
+   "part": 0,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 400,
+   "part": 1,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 400,
+   "part": 2,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 400,
+   "part": 3,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 400,
+   "part": 4,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 400,
+   "part": 5,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 400,
+   "part": 6,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 400,
+   "part": 7,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 401,
+   "part": 0,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 401,
+   "part": 1,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 401,
+   "part": 2,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 401,
+   "part": 3,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 401,
+   "part": 4,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 401,
+   "part": 5,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 401,
+   "part": 6,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 401,
+   "part": 7,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 402,
+   "part": 0,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 402,
+   "part": 1,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 402,
+   "part": 2,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 402,
+   "part": 3,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 402,
+   "part": 4,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 402,
+   "part": 5,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 402,
+   "part": 6,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 402,
+   "part": 7,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 403,
+   "part": 0,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 403,
+   "part": 1,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 403,
+   "part": 2,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 403,
+   "part": 3,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 403,
+   "part": 4,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 403,
+   "part": 5,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 403,
+   "part": 6,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 403,
+   "part": 7,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 404,
+   "part": 0,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 404,
+   "part": 1,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 404,
+   "part": 2,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 404,
+   "part": 3,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 404,
+   "part": 4,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 404,
+   "part": 5,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 404,
+   "part": 6,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 404,
+   "part": 7,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 405,
+   "part": 0,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 405,
+   "part": 1,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 405,
+   "part": 2,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 405,
+   "part": 3,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 405,
+   "part": 4,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 405,
+   "part": 5,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  },
+  {
+   "seed": 405,
+   "part": 6,
+   "decision": "NG",
+   "defect": true,
+   "grip": true
+  },
+  {
+   "seed": 405,
+   "part": 7,
+   "decision": "OK",
+   "defect": false,
+   "grip": true
+  }
+ ]
+}

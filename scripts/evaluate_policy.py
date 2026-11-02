@@ -47,6 +47,11 @@ def handover(seeds):
         off = np.array([np.clip(rng.normal(0, 0.01), -0.025, 0.025), rng.uniform(-0.06, 0.02), rng.uniform(-0.02, 0.03)])
         goal = teacher_goal(c, 0)
         hover = lambda: goal() + [0, 0, 0.17] + off  # noqa: E731
+        if rng.random() < 0.5:          # the other yaw that grips the same faces, as in the demonstrations
+            alt = yaw - np.pi if yaw > 0 else yaw + np.pi
+            q7 = c.ik(hover(), grasp_rot(alt), HOME_Q, iters=300)[6]
+            if c.jlo[6] + 0.2 < q7 < c.jhi[6] - 0.2:
+                yaw = alt
         q = c.ik(hover(), grasp_rot(yaw), HOME_Q, iters=300)
         d.qpos[c.arm_qadr] = q; d.ctrl[:7] = q; d.qvel[:] = 0
         mujoco.mj_forward(c.model, d)
@@ -85,7 +90,7 @@ if __name__ == "__main__":
         seeds = np.arange(50000, 50000 + n)
         jobs_b = ([(lat, False, 300 + k, "policy") for lat in LATENCIES for k in range(lots)]
                   + [(0.3, True, 300 + k, "policy") for k in range(lots)]
-                  + [(lat, False, 300, "program") for lat in LATENCIES])
+                  + [(lat, False, 300 + k, "program") for lat in LATENCIES for k in range(lots)])
         rb = pool.map_async(line, jobs_b)
         ra = pool.map(handover, [seeds[k::w] for k in range(w)])
         rb = rb.get()

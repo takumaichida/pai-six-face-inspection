@@ -53,6 +53,7 @@ def summarise(rows, sim_time):
                 false_reject_rate=ng(good) / max(1, len(good)), missed_defects=len(bad) - ng(bad),
                 grips_tried=len(tried), grip_success=sum(bool(r["grip"]) for r in tried) / max(1, len(tried)),
                 escaped_uninspected=sum(r["decision"] == "MISSED" for r in rows),
+                dropped=sum(r["decision"] == "DROPPED" for r in rows),
                 mean_cycle_s=float(np.mean([r["cycle"] for r in rows if r["grip"]] or [0])),
                 pose_err_x_mm=float(np.mean(ex)) if ex else None, pose_err_yaw_deg=float(np.mean(ey)) if ey else None,
                 parts_per_min=60 * len(rows) / sim_time)
