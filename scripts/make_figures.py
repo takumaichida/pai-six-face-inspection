@@ -70,7 +70,7 @@ fig.tight_layout(); fig.savefig("results/fig_confusion.png"); plt.close(fig)
 # 4) Imitation-learned grasp vs the program, both without latency compensation.
 pe = json.load(open("results/policy_eval.json"))["summary"]
 fig, ax = plt.subplots(figsize=(6.8, 4.3), dpi=150)
-prog = [ev[f"B_{lat}_0"]["grip_success"] for lat in lats]
+prog = [pe.get(f"prog_{lat}_0", ev[f"B_{lat}_0"])["grip_success"] for lat in lats]
 pol = [pe[f"line_{lat}_0"]["grip_success"] for lat in lats]
 ax.plot(lats, pol, "o-", color="#e08a1e", lw=2, label="模倣学習した方策（手先カメラで追いかける）")
 ax.plot(lats, prog, "s--", color="#d0533f", lw=2, label="プログラム（届いた推定のまま狙う）")

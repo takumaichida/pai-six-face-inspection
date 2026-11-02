@@ -39,7 +39,10 @@ v.update(il_eps=f"{pt['episodes']:,}", il_steps=f"{pt['train_steps'] + pt['val_s
          ho_eps=str(pe["handover"]["episodes"]), ho_succ=pct(pe["handover"]["success"]),
          ho_far=pct(pe["handover"]["success_far"]), pol_parts=str(pe[f"line_{lats[0]}_0"]["parts"]),
          pol_off="".join(f'<td class="num">{pct(pe[f"line_{lat}_0"]["grip_success"])}</td>' for lat in lats),
-         pol_off_max=pct(pe[f"line_{max(lats)}_0"]["grip_success"]))
+         pol_off_max=pct(pe[f"line_{max(lats)}_0"]["grip_success"]),
+         prog_off="".join(f'<td class="num">{pct(pe.get(f"prog_{lat}_0", ev[f"B_{lat}_0"])["grip_success"])}</td>' for lat in lats),
+         prog_off_max=pct(pe.get(f"prog_{max(lats)}_0", ev[f"B_{max(lats)}_0"])["grip_success"]),
+         prog_parts=str(pe.get(f"prog_{lats[0]}_0", ev[f"B_{lats[0]}_0"]).get("parts", 24)))
 html = open("report/report.html", encoding="utf-8").read()
 for k, val in v.items():
     html = html.replace("{{" + k + "}}", val)

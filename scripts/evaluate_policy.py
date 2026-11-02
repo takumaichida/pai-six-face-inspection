@@ -7,7 +7,7 @@ then the policy grips it. The camera estimate arrives 0-1.5 s late and is NOT co
 behind the part by belt speed x latency; the policy has to catch up from the wrist image. The program's grasp
 under the same conditions is in results/sync_eval.json (B_<lat>_0).
 
-usage: evaluate_policy.py <handover episodes> <workers> -> results/policy_eval.json
+usage: evaluate_policy.py <handover episodes> <workers> [lots per latency] -> results/policy_eval.json
 """
 import json
 import sys
@@ -62,7 +62,7 @@ def handover(seeds):
 
 
 def line(args):
-    latency, comp, seed = args
+    latency, comp, seed, grasp = args
     import torch
     torch.set_num_threads(1)
     from sortbot.imitation import GraspPolicy
@@ -72,17 +72,20 @@ def line(args):
     c = LaneCell(video_size=(64, 64))
     c.reset(seed=seed, n_defect=3, continuous=True)
     prog = SyncProgram(c, lambda cam, img, i: 0.0, PoseEstimator(), latency=latency, compensate=comp,
-                       grasp_policy=GraspPolicy(), grasp_only=True)
+                       grasp_policy=GraspPolicy() if grasp == "policy" else None, grasp_only=True)
     res = prog.run()
-    return [dict(latency=latency, comp=comp, seed=seed, part=r["part"], grip=bool(r.get("grip"))) for r in res]
+    return [dict(latency=latency, comp=comp, seed=seed, grasp=grasp, part=r["part"], grip=bool(r.get("grip"))) for r in res]
 
 
 if __name__ == "__main__":
     n, w = int(sys.argv[1]), int(sys.argv[2])
+    lots = int(sys.argv[3]) if len(sys.argv) > 3 else 3
     t0 = time.time()
     with Pool(w) as pool:
         seeds = np.arange(50000, 50000 + n)
-        jobs_b = [(lat, False, 300 + k) for lat in LATENCIES for k in range(3)] + [(0.3, True, 300 + k) for k in range(3)]
+        jobs_b = ([(lat, False, 300 + k, "policy") for lat in LATENCIES for k in range(lots)]
+                  + [(0.3, True, 300 + k, "policy") for k in range(lots)]
+                  + [(lat, False, 300, "program") for lat in LATENCIES])
         rb = pool.map_async(line, jobs_b)
         ra = pool.map(handover, [seeds[k::w] for k in range(w)])
         rb = rb.get()
@@ -93,8 +96,11 @@ if __name__ == "__main__":
                               mean_steps=float(np.mean([e["steps"] for e in a]))))
     for lat in LATENCIES:
         for comp in (False, True):
-            g = [e["grip"] for e in b if e["latency"] == lat and e["comp"] == comp]
+            g = [e["grip"] for e in b if e["latency"] == lat and e["comp"] == comp and e["grasp"] == "policy"]
             if g:
                 summ[f"line_{lat}_{int(comp)}"] = dict(parts=len(g), grip_success=float(np.mean(g)))
+        g = [e["grip"] for e in b if e["latency"] == lat and e["grasp"] == "program"]
+        if g:
+            summ[f"prog_{lat}_0"] = dict(parts=len(g), grip_success=float(np.mean(g)))
     json.dump(dict(summary=summ, handover=a, line=b), open("results/policy_eval.json", "w"), indent=1)
     print(json.dumps(summ, indent=1), f"\n{time.time() - t0:.0f} s")
